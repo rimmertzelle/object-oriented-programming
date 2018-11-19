@@ -1,5 +1,10 @@
-# object-oriented-programming
+# Object oriented programming
+
 Learn OOP through builiding a game with Typescript.
+
+## TS-skeleton app
+
+In the folder ts-skeleton app is the skeleton for all application
 
 ## Topics
 
@@ -10,3 +15,11 @@ Learn OOP through builiding a game with Typescript.
 5. Collision detection
 
 All topics have corresponding folders.
+
+## Case
+
+All topics are applied to the 'Asteroids' Game.
+
+## Used images
+
+All images in the asteroid games are from [Space Shooter Redux](https://kenney.nl/assets/space-shooter-redux)
