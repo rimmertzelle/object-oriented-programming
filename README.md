@@ -22,4 +22,4 @@ All topics are applied to the 'Asteroids' Game.
 
 ## Used images
 
-All images in the asteroid games are from [Space Shooter Redux](https://kenney.nl/assets/space-shooter-redux)
+All images in the asteroid game are from [Space Shooter Redux](https://kenney.nl/assets/space-shooter-redux)
