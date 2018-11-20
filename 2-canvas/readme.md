@@ -3,7 +3,7 @@
 All code is based on the ts-skeleton-app template.
 
 - starter code is found in the start folder.
-- end code is found in the end folder.
+- end code is found in the finished folder.
 
 ## Helpfull links
 
