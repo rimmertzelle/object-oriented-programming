@@ -1,6 +1,5 @@
 /// <reference path="../base/ViewBase.ts"/>
 /// <reference path="../views/MenuView.ts"/>
-/// <reference path="../helpers/MathHelper.ts"/>
 
 class GameView extends ViewBase
 {
@@ -14,9 +13,10 @@ class GameView extends ViewBase
         super(aCanvas,aChangeViewCallback);
     }
 
-    protected HandleClick(X: number, Y: number): void {
-        /* no implementation */
-    }
+    // CAN BE REMOVED
+    // protected HandleClick(X: number, Y: number): void {
+    //     /* no implementation */
+    // }
 
     protected RenderScreen(): void {
         //1. load life images
@@ -54,6 +54,15 @@ class GameView extends ViewBase
                 MathHelper.randomNumber(0, this.d_canvasHelper.GetHeight())
             );
         }
+    }
+
+    /**
+     * Cleanup
+     * @AccessModifier {protected}
+     * handles the cleanup and deregistration of created method callbacks
+     */
+    protected Cleanup(): void {
+        //
     }
 
 }

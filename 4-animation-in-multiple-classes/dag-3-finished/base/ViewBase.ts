@@ -3,13 +3,11 @@
 /**
  * Base Class that is generic for all screen classes
  */
-abstract class ViewBase{
+abstract class ViewBase {
 
-    protected readonly d_canvasHelper : CanvasHelper;
+    protected readonly d_canvasHelper: CanvasHelper;
 
-    protected readonly d_changeViewCallback : (aNewView : ViewBase) => void;
-
-    private d_alive : boolean = true;
+    protected readonly d_changeViewCallback: (aNewView: ViewBase) => void;
 
     /**
      * Constructor
@@ -17,17 +15,18 @@ abstract class ViewBase{
      * @param {HTMLCanvasElement} aCanvas - the canvas where to render to
      * @param aChangeViewCallback -
      */
-    protected constructor(aCanvas: HTMLCanvasElement,aChangeViewCallback : (aNewView : ViewBase) => void ) {
+    protected constructor(aCanvas: HTMLCanvasElement, aChangeViewCallback: (aNewView: ViewBase) => void) {
 
         // construct our helper class
-        this.d_canvasHelper = new CanvasHelper(aCanvas);
+        this.d_canvasHelper = CanvasHelper.Instance(aCanvas);
 
-        // store the callback for viewchanges
+        // store the callback for view changes
         this.d_changeViewCallback = aChangeViewCallback;
 
         // let our helper class handle the click handling
         // and let him pass the result ro our method
-        this.d_canvasHelper.RegisterOnClick(this.OnClick);
+        // NO LONGER REQUIRED.
+        // this.d_canvasHelper.RegisterOnClick(this.OnClick);
     }
 
     /**
@@ -37,21 +36,22 @@ abstract class ViewBase{
      * @param {number} aXaxis - the x position of the click event
      * @param {number} aYaxis - the y position of the click event
      */
-    private OnClick = (aXaxis : number, aYaxis : number) : void => {
-        // handle some flow control based upon the X and Y if necessary
-        // but only if this is the same for any screen (e.g. space = pause)
+    // NO LONGER REQUIRED, THERE IS A BETTER SOLLUTION IMPLEMENTED
+    //    private OnClick = (aXaxis : number, aYaxis : number) : void => {
+    // handle some flow control based upon the X and Y if necessary
+    // but only if this is the same for any screen (e.g. space = pause)
 
-        if (!this.d_alive) return; // workaround to solve lingering onClick events
-        // call a method that is implemented in the derived class
-        this.HandleClick(aXaxis, aYaxis);
-    }
+    //        if (!this.d_alive) return; // workaround to solve lingering onClick events
+    // call a method that is implemented in the derived class
+    //        this.HandleClick(aXaxis, aYaxis);
+    //    }
 
     /**
      * Render
      * @AccessModifier {Public}
      * Handles the drawing of screens in general
      */
-    public Render() : void {
+    public Render(): void {
         this.d_canvasHelper.Clear();
         this.RenderScreen();
     }
@@ -61,11 +61,10 @@ abstract class ViewBase{
      * @AccessModifier {Public}
      * Handles the cleanup
      */
-    public BeforeExit() : void {
+    public BeforeExit(): void {
         // Clear any lingering events.
-        this.d_alive = false; // workaround for now
+        this.Cleanup();
     }
-
 
     // ------------------------------------------------------------------------------------
     // ------------------------------------------------------------------------------------
@@ -78,7 +77,8 @@ abstract class ViewBase{
      * @param {number} X - the x position of the mouseclick
      * @param {number} Y - the class containing information for the event
      */
-    protected abstract HandleClick(X: number, Y: number): void;
+    // deprecated >> is nolonger needed by the click registration in the canvas helper
+    // protected abstract HandleClick(X: number, Y: number): void;
 
     /**
      * RenderScreen
@@ -87,4 +87,11 @@ abstract class ViewBase{
      * @param {MouseEvent} Event - the class containing information for the event
      */
     protected abstract RenderScreen(): void;
+
+    /**
+     * Cleanup
+     * @AccessModifier {Protected}
+     * Handles all the actions before the class goes out of scope
+     */
+    protected abstract Cleanup(): void;
 }
