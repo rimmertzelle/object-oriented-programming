@@ -1,3 +1,5 @@
+# Simple Typescript Class
+
 ```typescript
 class Car {
   //attributes

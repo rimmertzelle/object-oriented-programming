@@ -1,3 +1,5 @@
+# Start app pattern
+
 ```js
 /*
 * Default pattern for setting up an app.

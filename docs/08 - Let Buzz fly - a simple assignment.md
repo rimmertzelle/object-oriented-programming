@@ -1,4 +1,6 @@
-![](resources/EC474359F4000C74DDB1C02DD9FE33A0.jpg)
+# Assigment - Let Buzz fly
+
+![Buzz lightyear](resources/EC474359F4000C74DDB1C02DD9FE33A0.jpg)
 
 **Step 1 - Class representation of Buzz**
 
