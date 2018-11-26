@@ -1,3 +1,5 @@
+/// <reference path="../dataObjects/ButtonAction.ts"/>
+
 class CanvasHelper {
 
     // changed from public to private

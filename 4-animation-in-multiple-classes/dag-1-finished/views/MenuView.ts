@@ -1,4 +1,5 @@
 /// <reference path="../base/ViewBase.ts"/>
+/// <reference path="./GameView.ts"/>
 
 class MenuView extends ViewBase
 {

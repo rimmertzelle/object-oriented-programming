@@ -1,4 +1,4 @@
-/// <reference path="..\helpers\CanvasHelper.ts"/>
+/// <reference path="../helpers/CanvasHelper.ts"/>
 
 /**
  * Base Class that is generic for all screen classes

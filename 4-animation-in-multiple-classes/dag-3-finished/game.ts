@@ -1,4 +1,5 @@
 /// <reference path="base/ViewBase.ts"/>
+/// <reference path="views/MenuView.ts"/>
 
 class Game {
     //global attr for canvas
