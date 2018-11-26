@@ -4,31 +4,33 @@ In order to transpile (see [difference between compiling en transpiling](http://
 
 **Typescript Compilation File (tsconfig.json)**
 
-```js
-  {
+```json
+{
     "compilerOptions": {
-        "sourceMap":  true,
-        "removeComments": true,
+        "target": "es6",
+        "sourceMap": true,
         "noImplicitAny": true,
         "noImplicitReturns": true,
-        "target":"es5",
-        "out": "js/main.js"
+        "removeComments": true,
+        "out": "build/app.js",
+        "noEmitOnError": true
     },
-    "include" : [
-        "ts/**/*"
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
     ]
 }
 ```
 
-This is a simple configuration file which feeds the compiling process. If you type `tsc -w` in the folder of this file the typescript compiler will use this file to compile Typescript to JavaScript. 
+This is a simple configuration file which feeds the compiling process. If you type `tsc` in the folder of this file the typescript compiler will use this file to compile Typescript to JavaScript. 
 
-- line 2: these are the compiler options
-- line 3: boolean for using an sourceMap to map the JS to TS. 
-- line 4: remove Comments in the compiled JavaScript
-- line 5: check if there are some implicit any types used in TS.
-- line 6: check if there are some implicit return types used in TS.
-- line 7: which ecmascript version should the compiler use.
-- line 8: what is the output file of the compiling process.
-- line 11: which files and folders to compile.
+- The `compilerOptions` object holds all the compiler options.
+- You can to set a version of JS with the `target` attribute.
+- The `out` attribute holds the final result of the compiling process. In this case the TS files will be compiled in one JS file.
+- the `include` attribute holds all the files and directories to compile.
+- the `exclude` attribute exludes certain files and directories from the compiling process.
 
 For detailed description of compiler options see [tsconfig on typescript.com](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)

@@ -2,7 +2,7 @@
 
 **Step 1 - Class representation of Buzz**
 
-Create a class representation of Buzz Lightyear. Do not forget to add a game class as well. The game class is responsible for event handling en collision detection (added in step).
+Create a class representation of Buzz Lightyear. Do not forget to add a game class as well. The game class is responsible for event handling en collision detection (added in step 3).
 
 **Step 2 - add some movement to Buzz**
 
