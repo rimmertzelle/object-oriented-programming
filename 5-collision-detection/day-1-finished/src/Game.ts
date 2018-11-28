@@ -1,3 +1,7 @@
+///<reference path="Canvas.ts" />
+///<reference path="Zombie.ts" />
+///<reference path="Player.ts" />
+
 class Game {
 
     private readonly _canvas: Canvas;
